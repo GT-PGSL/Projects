@@ -13,7 +13,7 @@ RUN pip install numpy matplotlib scikit-image opencv-python
 COPY Z_Scope_Processing /home/jovyan/work/Z_Scope_Processing
 
 # Download demo.tiff from Dropbox (replace YOUR_DROPBOX_ID with your actual ID)
-RUN wget "https://www.dropbox.com/scl/fi/1vdb4tl0xhiwk6ms66xkf/demo.tiff?rlkey=qxyyfr0qrv92f5wv44pmzvctk&st=ar4qug8k&dl=0" -O /home/jovyan/work/demo.tiff
+RUN wget "https://www.dropbox.com/scl/fi/1vdb4tl0xhiwk6ms66xkf/demo.tiff?rlkey=qxyyfr0qrv92f5wv44pmzvctk&st=ar4qug8k&dl=1" -O /home/jovyan/work/demo.tiff
 
 
 # Set the working directory
