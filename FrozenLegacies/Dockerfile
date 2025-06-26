@@ -13,11 +13,8 @@ RUN pip install numpy matplotlib scikit-image opencv-python
 COPY Z_Scope_Processing /home/jovyan/work/Z_Scope_Processing
 
 # Download demo.tiff from Dropbox (replace YOUR_DROPBOX_ID with your actual ID)
-RUN wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
-    "https://drive.google.com/uc?export=download&id=1ZEkRrKTXIPz3WpLIEZDwAohS9X41uX4W" -O- | \
-    sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p' > /tmp/confirm && \
-    wget --load-cookies /tmp/cookies.txt "https://drive.google.com/uc?export=download&confirm=$(cat /tmp/confirm)&id=1ZEkRrKTXIPz3WpLIEZDwAohS9X41uX4W" -O /home/jovyan/work/demo.tiff && \
-    rm -rf /tmp/confirm /tmp/cookies.txt
+RUN wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1ZEkRrKTXIPz3WpLIEZDwAohS9X41uX4W' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1ZEkRrKTXIPz3WpLIEZDwAohS9X41uX4W" -O /home/jovyan/work/demo.tiff && rm -rf /tmp/cookies.txt
+
 
 
 
